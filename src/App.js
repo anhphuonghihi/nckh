@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback } from "react";
+import { Viewer, KmlDataSource, useCesium, Camera } from "resium";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Viewer full>
+        <KmlDataSource
+          data={"./toa A1.kmz"}
+          // data={"./ducthang_v1_08042021.kmz"}
+
+          show={true}
+        />
+    </Viewer>
   );
-}
+};
 
 export default App;
